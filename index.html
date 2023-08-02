@@ -59,7 +59,7 @@
     <div data-bs-spy="scroll" data-bs-target="cabecalho" data-bs-smooth-scroll="true">
         <section id="sobre-o-cafe">
             <div class="container">
-                <h1 class="text-up-carousel mb-0 p-3">
+                <h1 class="text-up-carousel mb-0 p-3 d-none d-lg-block">
                     Venha conhecer o melhor café da região
                     </h1>
                 <div class="carousel slide carousel-fade" data-bs-ride="carousel" id="carousel">
@@ -278,7 +278,7 @@
                 <div class="row">
                     <div class="col-md-7">
                         <form>
-                            <div class="mb-3">
+                            <div class="mb-3 form-campo">
                                 <label for="nome" class="fw-bold form-label">Seu Nome:</label>
                                 <input type="text" id="nome" required class="form-control">
                             </div>
@@ -288,7 +288,7 @@
                             </div>
                             <div class="mb-3">
                                 <label for="telefone" class="fw-bold form-label">Seu Telefone:</label>
-                                <input type="tel" id="telefone"required class="form-control">
+                                <input type="text" id="telefone"required class="form-control">
                             </div>
                             <div class="mb-3">
                                 <label for="mensagem" class="fw-bold form-label">Sua Mensagem:</label>
@@ -321,7 +321,7 @@
                                 </li>
                             </ul>
                         </div>
-                        <div class="row mt-4">
+                        <div class="row mt-4 pb-md-5">
                             <h4 class="text-colored">
                                 <i class="bi bi-cursor-fill"></i>
                                 Endereço:
@@ -333,8 +333,17 @@
             </div>
         </section>
     </div>
-<body>
-    
+    <body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+</head>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+    <script src="js/jquery.mask.min.js"></script>
+    <script src="js/jquery.validate.js"></script>
+    <script src="js/additional-methods.min.js"></script>
+    <script src="js/messages_pt_BR.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
