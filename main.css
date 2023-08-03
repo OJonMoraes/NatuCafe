@@ -1,3 +1,7 @@
+body, #cabecalho {
+    background-color: #f1ecec;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
 }

@@ -1,51 +1,55 @@
 $(document).ready(function() {
-    // Mask the telefone input with the desired format
     $('#telefone').mask('(00) 00000-0000');
-
-    // Update telefone mask on blur based on the number of digits
     $('#telefone').blur(function(e) {
         const telefoneValue = $(this).val().replace(/\D/g, '');
-        if (telefoneValue.length == 11) {
+        if (telefoneValue.length === 11) {
             $('#telefone').mask('(00) 00000-00009');
         } else {
             $('#telefone').mask('(00) 0000-00009');
         }
     });
 
-    // Validate the form using jQuery Validation Plugin
-    $('#form').validate({
+    $.validator.addMethod("minWords", function(value, element, params) {
+        return this.optional(element) || value.trim().split(/\s+/).length >= params;
+    }, $.validator.format("Por favor, digite pelo menos {0} palavras."));
+
+    $('form').validate({
         rules: {
-            nome: {
+            nome:  {
                 required: true,
-                minlength: 2,
+                minlength: 5,
+                maxlength: 30,
                 minWords: 2
             },
             email: {
+                required: false,
                 email: true
             },
             telefone: {
                 required: true,
                 minlength: 14,
                 maxlength: 15
+            },
+            mensagem: {
+                required: true,
+                minlength: 10,
+                maxlength: 100
             }
         },
-        messages: {
-            nome: {
-                required: "Por favor, digite seu nome.",
-                minlength: "O nome deve ter pelo menos 2 caracteres.",
-                minWords: "Digite pelo menos 2 palavras."
-            },
-            email: {
-                email: "Por favor, digite um endereço de email válido."
-            },
+        messages: { 
             telefone: {
-                required: "Por favor, digite um número de telefone.",
-                minlength: "O telefone deve ter pelo menos 14 dígitos.",
-                maxlength: "O telefone não pode ter mais de 15 dígitos."
+                minlength: 'Por favor, adicione um número válido!',
             }
         },
         submitHandler: function(form) {
-            alert('Cadastro efetuado com sucesso.');
+            alert('Formulário enviado com sucesso!');
+            form.reset();
+            return false; 
         }
     });
 });
+
+
+
+
+
